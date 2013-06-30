@@ -11,6 +11,13 @@ class ProductsControllerTest < ActionController::TestCase
     }
   end
 
+  test "can't delete product in cart" do
+    assert_difference('Product.count', 0) do
+      delete :destroy, id: products(:ruby)
+    end
+   assert_redirected_to products_path
+  end
+
   test "should get index" do
     get :index
     assert_response :success
