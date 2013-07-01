@@ -1,7 +1,11 @@
+>ruby -v <br>
 ruby 2.0.0p247 (2013-06-27 revision 41674) [x86_64-linux]<br>
 
+>uname -srm<br>
+Linux 3.8.0-25-generic x86_64<br>
 
-rake about<br>
+
+>rake about<br>
 
 About your application's environment <br>
 Ruby version              2.0.0 (x86_64-linux)<br>
