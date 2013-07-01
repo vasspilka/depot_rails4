@@ -6,7 +6,6 @@ Linux 3.8.0-25-generic x86_64<br>
 
 
 $rake about<br>
-
 About your application's environment <br>
 Ruby version              2.0.0 (x86_64-linux)<br>
 RubyGems version          2.0.3<br>
