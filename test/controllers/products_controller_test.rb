@@ -11,6 +11,8 @@ class ProductsControllerTest < ActionController::TestCase
     }
   end
 
+
+
   test "can't delete product in cart" do
     assert_difference('Product.count', 0) do
       delete :destroy, id: products(:ruby)
@@ -18,10 +20,10 @@ class ProductsControllerTest < ActionController::TestCase
    assert_redirected_to products_path
   end
 
-  test "should get index" do
+  test "should require login" do
+    logout
     get :index
-    assert_response :success
-    assert_not_nil assigns(:products)
+    assert_redirected_to login_path
   end
 
   test "should get new" do

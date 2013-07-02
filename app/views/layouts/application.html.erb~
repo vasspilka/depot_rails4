@@ -10,7 +10,7 @@
 <body class="<%= controller.controller_name %>">
   <div id="banner">
     <a href="http://localhost:3000"><%= image_tag("logo.png") %></a>
-    <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
+    <%= @page_title || t('.title') %><!-- <label id="code.depot.e.title"/> -->
   </div>
   <div id="columns">
     <div id="side">
@@ -19,15 +19,24 @@
         <%= render @cart %>
       <% end %>
      <% end %>
-     
+     <%= render Order.find(session[:order_id]) if session[:order_id] %>
 
       <ul>
-        <li><a href="http://localhost:3000">Home</a></li>
-        <li><a href="http://localhost:3000/faq">Questions (Empty)</a></li>
-        <li><a href="http://localhost:3000/news">News(Empty)</a></li>
-        <li><a href="http://localhost:3000/contact">Contact(Empty)</a></li>
-        <li><a href="http://localhost:3000/orders">Orders</a></li>
+        <li><a href="http://localhost:3000"><%= t('.home') %></a></li>
+        <li><a href="http://localhost:3000/faq"><%= t('.questions') %> (Empty)</a></li>
+        <li><a href="http://localhost:3000/news"><%= t('.news') %></a></li>
+        <li><a href="http://localhost:3000/contact"><%= t('.constact') %></a></li>
+        <li><%= button_to 'login', login_path %></li>
       </ul>
+ 
+      <% if session[:user_id] %>
+        <ul>
+          <li><%= link_to 'Orders',   orders_path   %></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users',    users_path    %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete   %>
+      <% end %>
     </div>
     <div id="main">
       <%= yield %><!-- <label id="code.depot.e.include"/> -->
