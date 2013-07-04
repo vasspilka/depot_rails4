@@ -26,4 +26,4 @@ Database schema version   20130630162700<br>
 
 This depot was created by the instructions here <a href=http://intertwingly.net/projects/AWDwR4/checkdepot/>Agile Web Dev</a><br>
 If any licecing problems contact me and I will remove/modify this repository <br>
-Additional sources <a href=https://github.com/rubys/awdwr/tree/master/edition4/data>Sam Ruby Rails </a><br>
+Additional sources <a href=https://github.com/rubys/awdwr/tree/master/edition4/data>Sam Ruby Rails </a>, <a href=https://github.com/catsby/Depot-Rails3> Catsby </a><br>
